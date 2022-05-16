@@ -1,3 +1,3 @@
 # Pokédex App
 
-A simply Pokédex App Using PokeAPI with vanilla JavaScript
+A simply Pokédex App Using PokeAPI pagination with vanilla JavaScript
