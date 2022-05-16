@@ -13,6 +13,7 @@ async function loadPokemon(url) {
       $template = "",
       $prevLink,
       $nextLink;
+      console.log(res, json);
 
     if (!res.ok) throw { status: res.status, statusText: res.statusText }
 
@@ -20,16 +21,18 @@ async function loadPokemon(url) {
       try {
         let res = await fetch(json.results[i].url),
           pokemon = await res.json();
-
+        console.log(pokemon);
         if (!res.ok) throw { status: res.status, statusText: res.statusText }
 
         $template += `
           <figure>
           <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-          <figcaption><small>#0${pokemon.game_indices[6].game_index}</small></figcaption>
-          <figcaption>${pokemon.name}</figcaption>
-          <figcaption class="type"><small>${pokemon.types[0].type.name}</small></figcaption>
-          </figure>
+          <div>
+            <figcaption><small>#${pokemon.game_indices[6].game_index}</small></figcaption>
+            <figcaption>${pokemon.name}</figcaption>
+            <figcaption class="type"><small>${pokemon.types[0].type.name}</small></figcaption>
+            </figure>
+          </div>
           `;
         
       } catch (err) {
@@ -49,6 +52,7 @@ async function loadPokemon(url) {
   }
 };
 d.addEventListener("DOMContentLoaded", e => loadPokemon(pokeAPI));
+
 d.addEventListener("click", e => {
   if (e.target.matches(".links a")) {
     e.preventDefault();

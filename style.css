@@ -2,7 +2,7 @@
 html {
   box-sizing: border-box;
   font-size: 1rem;
-  background-color: rgb(173, 173, 173);
+  background-color: #ffefef;
   color: white;
 }
 
@@ -17,7 +17,7 @@ html {
 h1,
 h4 {
   font-family: "Pokemon Solid", sans-serif;
-  color: hsl(60, 90%, 52%);
+  color: hsl(60, 86%, 47%);
   text-shadow: 2px 2px 1px blue, 2px 2px 1px blue, -2px -2px 1px blue,
     -2px -2px 1px blue;
   text-align: center;
@@ -26,6 +26,9 @@ h4 {
 h4 {
   font-size: 1.25rem;
   color: hsl(60, 90%, 71%);
+}
+div {
+  background-color: rgb(42, 124, 35);
 }
 nav {
   text-align: center;
